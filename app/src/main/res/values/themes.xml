@@ -1,0 +1,12 @@
+<resources>
+    <style name="Theme.Gardi" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorOnPrimary">@color/ink</item>
+        <item name="android:windowBackground">@color/ink</item>
+        <item name="android:statusBarColor">@color/yellow</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <style name="Theme.Gardi.Splash" parent="Theme.Gardi">
+        <item name="android:windowBackground">@color/yellow</item>
+    </style>
+</resources>

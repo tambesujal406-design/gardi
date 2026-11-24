@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ink"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="‹"
+            android:textColor="@color/ink"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:background="@drawable/bg_badge"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="@color/yellow"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="Gardi"
+            android:textColor="@color/ink"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Central line"
+            android:textColor="@color/ink"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="12dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <AutoCompleteTextView
+                android:id="@+id/from"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input"
+                android:hint="From"
+                android:inputType="none"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:popupBackground="@drawable/bg_card"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#888888" />
+
+            <AutoCompleteTextView
+                android:id="@+id/to"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input"
+                android:hint="To"
+                android:inputType="none"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:popupBackground="@drawable/bg_card"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#888888" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/swap"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="⇅"
+            android:textColor="@color/yellow"
+            android:textSize="26sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp">
+
+        <TextView
+            android:id="@+id/leaveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="14dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="8dp"
+            android:text="Leaving: now"
+            android:textColor="@color/yellow"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nowBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Use now"
+            android:textColor="@color/muted"
+            android:textSize="13sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <com.gardi.app.MascotView
+            android:id="@+id/mascot"
+            android:layout_width="130dp"
+            android:layout_height="98dp" />
+
+        <TextView
+            android:id="@+id/bubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_bubble"
+            android:paddingStart="14dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/ink"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="No more trains found for this trip in the sample timetable."
+        android:textColor="@color/muted"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Sample timetable and estimated crowd levels, not real data."
+        android:textColor="#888888"
+        android:textSize="11sp" />
+</LinearLayout>
